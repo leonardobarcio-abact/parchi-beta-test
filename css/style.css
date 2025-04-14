@@ -310,6 +310,10 @@ li.cat {
     .parchi h2, .scopri h2, .evidenza h2, .attivita h2, .text h2 {
         font-size: 42px;
     }
+
+    .text-box {
+        max-width: 600px;
+    }
 }
 
 @media(max-width:900px) {
@@ -329,6 +333,10 @@ li.cat {
 
     .footer ul {
         margin-bottom: 50px;
+    }
+
+    .text-box {
+        max-width: 560px;
     }
 }
 
@@ -358,7 +366,7 @@ li.cat {
     }
 
     .text-box {
-        max-width: 520px;
+        max-width: 440px;
     }
 }
 
@@ -401,7 +409,7 @@ li.cat {
     }
 
     .text-box {
-        max-width: 440px;
+        max-width: 380px;
     }
 
     .text-box p, .text-box li, .text-box ul {
@@ -427,7 +435,7 @@ li.cat {
     }
 
     .text-box {
-        max-width: 360px;
+        max-width: 280px;
     }
 }
 
@@ -445,6 +453,6 @@ li.cat {
     }
 
     .text-box {
-        max-width: 290px;
+        max-width: 240px;
     }
 }
