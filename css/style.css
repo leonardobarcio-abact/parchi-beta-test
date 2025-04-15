@@ -342,7 +342,7 @@ li.cat {
 
 @media(max-width: 700px) {
     .card {
-        width: calc(100vw - 40px); /* Full screen width minus padding */
+        width: calc(100vw - 40px);
     }
 
     .hero h1, .banner p {
