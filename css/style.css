@@ -130,6 +130,11 @@ nav img{
     position: relative;
 }
 
+.card:hover, .card-attivita:hover, .card-evidenza:hover, .banner:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
 .card p, .card-attivita p, .card-evidenza p {
     position: absolute;
     color: #fff;
