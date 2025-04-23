@@ -39,6 +39,14 @@ nav a {
     color: #1d1d1f;
 }
 
+.mv {
+    display: none;
+}
+
+.dkv {
+    display: block;
+}
+
 nav a:hover {
     color: #4c4c4c;
 }
@@ -396,11 +404,19 @@ li.cat {
     }
 
     nav img {
-        width: 138px;
+        width: 80px;
     }
 
     nav ul {
         gap: 120px;
+    }
+
+    .dkv {
+        display: none;
+    }
+
+    .mv {
+        display: block;
     }
 
     .hero h1, .banner p {
