@@ -73,7 +73,7 @@ nav img{
     z-index: 9998;
 }
 
-.hero img, .banner img, .card img, .card-image img, .card-attivita img, .card-evidenza img {
+.hero img, .banner img, .card img, .card-image img, .card-image-a img, .card-attivita img, .card-evidenza img {
     object-fit: cover;
     border-radius: 20px;
     width: 100%;
@@ -131,11 +131,10 @@ nav img{
     position: relative;
 }
 
-.card-image {
+.card-image, .card-image-a {
     height: 460px;
     max-width: 433px;
     border-radius: 20px;
-    position: relative;
 }
 
 .card:hover, .card-attivita:hover {
