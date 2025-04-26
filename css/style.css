@@ -644,10 +644,6 @@ li.cat {
     .modal-text {
         max-width: 260px;
     }
-
-    .modal-text p {
-        font-size: 13px;
-    }
 }
 
 @media(max-width: 420px) {
@@ -689,9 +685,5 @@ li.cat {
 
     .modal-text {
         max-width: 150px;
-    }
-
-    .modal-text p {
-        font-size: 10px;
     }
 }
