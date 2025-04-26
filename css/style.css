@@ -97,7 +97,7 @@ nav img{
     font-size: 22px;
 }
 
-.parchi, .scopri, .text, .attivita, .evidenza, .image /* , .maps */ {
+.parchi, .scopri, .text, .attivita, .evidenza, .image {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,10 +138,21 @@ nav img{
     position: relative;
 }
 
-.card:hover, .card-attivita:hover, .card-evidenza:hover, .banner:hover {
+.card:hover, .card-attivita:hover {
     transform: scale(1.02);
     transition: 0.5s;
 }
+
+.banner:hover, .card-evidenza:hover {
+    transform: scale(1.012);
+    transition: 0.5s;
+}
+
+.card-image:hover {
+    transform: scale(1.012);
+    transition: 0.5s;
+}
+
 
 .card p, .card-attivita p, .card-evidenza p {
     position: absolute;
@@ -240,7 +251,7 @@ li.cat {
     color: #6b6b6b;
 }
 
-.copyright p:last-child, .text-box p:last-child, .text-box li:last-child, .text-box ul:last-child, .footer li:last-child, .footer ul:last-child, .card-group:last-child {
+.copyright p:last-child, .text-box p:last-child, .text-box li:last-child, .text-box ul:last-child, .footer li:last-child, .footer ul:last-child, .card-group:last-child, .modal-text p:last-child {
     margin-bottom: 0;
 }
 
@@ -283,15 +294,68 @@ li.cat {
     border-radius: 20px;
 }
 
-/*
-//css con Google API e script per maps
-.map-box {
-    overflow: hidden;
-    height: 460px;
-    width: 100%;
-    border-radius: 20px;
+.modal {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(30, 30, 30, 0.82);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
 }
-*/
+
+.modal-content {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 460px;
+}
+
+.modal-text p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+}
+
+.modal-content img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.arrow-r {
+    position: absolute;
+    right: 32px;
+    height: 32px;
+}
+
+.arrow-l {
+    position: absolute;
+    left: 32px;
+    height: 32px;
+}
+
+.modal:target {
+    display: flex;
+}
 
 @media(max-width:1240px){
     .hero h1, .banner p {
@@ -313,6 +377,44 @@ li.cat {
     .text-box p, .text-box li, .text-box ul {
         font-size: 18px;
     }
+
+    .modal-content {
+        gap: 20px;
+    }
+
+    .modal-content img {
+        max-width: 380px;
+        height: auto;
+    }
+
+    .modal-text {
+        max-width: 400px;
+    }
+
+    .modal-text p {
+        font-size: 18px;
+    }
+
+    .close {
+        width: 21px;
+        right: 21px;
+        height: 21px;
+        top: 21px;
+    }
+
+    .arrow-r {
+        right: 21px;
+        width: 25px;
+    }
+
+    .arrow-l {
+        left: 21px;
+        width: 25px;
+    }
+
+    a.arrow-l, a.arrow-r {
+        height: 21px;
+    }
 }
 
 @media(max-width:1000px) {
@@ -326,6 +428,18 @@ li.cat {
 
     .text-box {
         max-width: 600px;
+    }
+
+    .modal-content {
+        flex-direction: column;
+    }
+
+    .modal-content img {
+        max-width: 300px;
+    }
+
+    .modal-text {
+        max-width: 650px;
     }
 }
 
@@ -350,6 +464,38 @@ li.cat {
 
     .text-box {
         max-width: 560px;
+    }
+
+    .modal-content {
+        gap: 20px;
+    }
+
+    .modal-text {
+        max-width: 620px;
+    }
+}
+
+@media(max-width: 840px) {
+    .modal-content img {
+        max-width: 260px;
+    }
+
+    .modal-text {
+        max-width: 580px;
+    }
+}
+
+@media(max-width: 760px) {
+    .modal-content img {
+        max-width: 260px;
+    }
+
+    .modal-text {
+        max-width: 540px;
+    }
+
+    .modal-text p {
+        font-size: 16px;
     }
 }
 
@@ -384,6 +530,24 @@ li.cat {
 
     .text-box {
         max-width: 440px;
+    }
+
+    .modal-text {
+        max-width: 450px;
+    }
+}
+
+@media(max-width: 600px) {
+    .modal-content img {
+        max-width: 230px;
+    }
+
+    .modal-text {
+        max-width: 400px;
+    }
+
+    .modal-text p {
+        font-size: 14px;
     }
 }
 
@@ -446,6 +610,10 @@ li.cat {
     .text-box p, .text-box li, .text-box ul {
         font-size: 16px;
     }
+
+    .modal-text {
+        max-width: 330px;
+    }
 }
 
 @media(max-width: 480px) {
@@ -468,6 +636,32 @@ li.cat {
     .text-box {
         max-width: 280px;
     }
+
+    .modal-content img {
+        max-width: 220px;
+    }
+
+    .modal-text {
+        max-width: 260px;
+    }
+
+    .modal-text p {
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 420px) {
+    .modal-content img {
+        max-width: 210px;
+    }
+
+    .modal-text {
+        max-width: 190px;
+    }
+
+    .modal-text p {
+        font-size: 12px;
+    }
 }
 
 @media(max-width: 375px) {
@@ -485,5 +679,19 @@ li.cat {
 
     .text-box {
         max-width: 240px;
+    }
+}
+
+@media(max-width: 360px) {
+    .modal-content img {
+        max-width: 160px;
+    }
+
+    .modal-text {
+        max-width: 150px;
+    }
+
+    .modal-text p {
+        font-size: 10px;
     }
 }
